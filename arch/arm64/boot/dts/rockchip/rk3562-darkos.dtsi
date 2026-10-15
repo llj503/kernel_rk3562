@@ -259,7 +259,7 @@
 		enable-active-high;
 	};
 
-	wireless-wlan {
+	wireless_wlan: wireless-wlan {
 		compatible = "wlan-platdata";
 		rockchip,grf = <&sys_grf>;
 		/* Rev A is RK915, rev B is AIC8800D80. rfkill is the only consumer
@@ -279,7 +279,7 @@
 		status = "disabled";
 	};
 
-	charge-animation {
+	charge_anim: charge-animation {
 		compatible = "rockchip,uboot-charge";
 		rockchip,uboot-charge-on = <1>;
 		rockchip,android-charge-on = <0>;
@@ -626,6 +626,8 @@
 	status = "okay";
 };
 
+/* USB2 host controllers are left disabled by default; boards that attach
+ * peripherals (or an on-board WiFi module) to them re-enable them per-device. */
 &usb_host0_ehci {
 	status = "disabled";
 };
